@@ -1,7 +1,7 @@
 "use client";
 
-import { CloseMarkSVG } from "@/ui";
 import { useState } from "react";
+import { CloseMarkSVG } from "@/ui";
 
 const SearchInput = () => {
   const [input, setInput] = useState("");

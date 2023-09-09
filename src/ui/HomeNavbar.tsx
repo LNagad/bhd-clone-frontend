@@ -1,11 +1,8 @@
 "use client";
 
-import React from "react";
-import BarsSVG from "./BarsSVG";
-import LaptopSVG from "./LaptopSVG";
+import { BarsSVG, LaptopSVG } from "./icons";
 import Link from "next/link";
 import Image from "next/image";
-import { FC } from "react";
 import SelectExperienceColapse from "./SelectExperienceColapse";
 
 export const HomeNavbar = () => {

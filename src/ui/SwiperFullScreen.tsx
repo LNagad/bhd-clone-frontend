@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -35,7 +34,7 @@ const SwiperFullScreen = () => {
           style={{ width: "100%", height: "200px" }}
         >
           <Image
-            className="w-full h-7"
+            className="w-full xs:object-fill sm:object-cover"
             src={image.src}
             width={500}
             height={600}

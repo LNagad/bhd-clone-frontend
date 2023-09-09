@@ -1,29 +1,26 @@
 "use client";
-
 import { useState } from "react";
 import { UnmountClosed } from "react-collapse";
-import ShopSVG from "./ShopSVG";
-import CloseMarkSVG from "./CloseMarkSVG";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+
+import { CloseMarkSVG, ShopSVG } from "./icons";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const SelectExperienceColapse = () => {
   const [visible, setVisible] = useState(false);
 
   const experienceMenuItems = [
-    {
-      name: "Personal",
-      link: "/",
-    },
-    {
-      name: "Pyme",
-      link: "/pyme",
-    },
-    {
-      name: "Corporativa y Empresarial",
-      link: "/empresa",
-    },
+    { name: "Personal", link: "/"},
+    { name: "Pyme", link: "/pyme" },
+    { name: "Corporativa y Empresarial", link: "/empresa"},
   ];
+
+  const handleSetCollapseVisibleWithDelay = () => {
+    setTimeout(() => setVisible(false), 1000);
+  }
 
   return (
     <>
@@ -39,20 +36,19 @@ const SelectExperienceColapse = () => {
 
       <UnmountClosed isOpened={visible}>
         {experienceMenuItems.map((item) => (
-          <div
-            key={item.link}
-            className={`px-8 py-3 flex items-center gap-x-2 ${
-              item.link === "/" && "bg-primary-selected "
-            }`}
-          >
-            <ShopSVG fontSize={22} fill="#fff" />
-            <p
-              className="text-white uppercase"
-              style={{ fontWeight: 500, fontSize: 12 }}
+          <Link key={item.link} href={item.link} onClick={handleSetCollapseVisibleWithDelay}>
+            <div
+              className={`px-8 py-3 flex items-center gap-x-2 
+              ${item.link === window.location.pathname && "bg-primary-selected "}`}
             >
-              {item.name}
-            </p>
-          </div>
+              <ShopSVG fontSize={22} fill="#fff" />
+              <p
+                className="text-white uppercase"
+                style={{ fontWeight: 500, fontSize: 12 }}
+              >{item.name}
+              </p>
+            </div>
+          </Link>
         ))}
 
         <button
