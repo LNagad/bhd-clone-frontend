@@ -17,16 +17,16 @@ const SearchInput = () => {
         onChange={handleChange}
         value={input}
         placeholder="¿Qué estás buscando?"
-        className="placeholder:text-gray-500 shadow-xl shadow-gray-200 px-7 py-4 rounded-3xl w-[90%]
-        active:outline-none focus:outline-none "
+        className="placeholder:text-gray-500 shadow-xl shadow-gray-200 rounded-3xl w-[90%]
+        active:outline-none focus:outline-none px-7 py-4 sm:px-9 py-6 sm:text-lg"
       />
 
       {input.length > 0 && (
         <button
           onClick={() => setInput("")}
-          className="absolute right-10 top-0 bottom-0"
+          className="absolute right-10 sm:right-14 top-0 bottom-0"
         >
-          <CloseMarkSVG fill="#878682" />
+          <CloseMarkSVG className="sm:text-xl" fill="#878682" />
         </button>
       )}
     </div>

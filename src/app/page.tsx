@@ -41,7 +41,7 @@ export default function Home() {
         >
           <SearchInput />
         </div>
-        <div className="canales__container mt-10 flex justify-center flex-wrap gap-x-16 gap-y-8">
+        <div className="canales__container mt-10 sm: mt-16 flex justify-center flex-wrap gap-x-16 sm:gap-x-10 gap-y-8">
           {canales.map((canal, index) => (
             <OtherSectionsBurble key={canal.link} text={canal.text}>
               {canal.icon}

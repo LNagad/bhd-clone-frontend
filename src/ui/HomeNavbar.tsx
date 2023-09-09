@@ -8,9 +8,9 @@ import SelectExperienceColapse from "./SelectExperienceColapse";
 export const HomeNavbar = () => {
   return (
     <nav className="min-w-full flex flex-col">
-      <section className="w-full flex justify-between px-5 py-5">
+      <section className="w-full flex justify-between p-5 sm:px-7 py-6 ">
         <div className="w-1/5 flex items-center">
-          <BarsSVG fontSize={22} fill="#8b8f8b" />
+          <BarsSVG className="text-xl sm:text-3xl" fill="#8b8f8b" />
         </div>
         <div className="w-[70%] flex items-center justify-center">
           <Link href="/">
@@ -23,9 +23,9 @@ export const HomeNavbar = () => {
             />
           </Link>
         </div>
-        <div className="w-1/4 flex items-center gap-x-1">
-          <LaptopSVG fontSize={22} fill="#54AC4C" />
-          <p className="uppercase text-sm font-semibold text-green-600">
+        <div className="w-1/4 flex items-center gap-x-2 justify-end">
+          <LaptopSVG className="text-xl sm:text-3xl" fill="#54AC4C" />
+          <p className="uppercase text-sm sm:text-lg font-semibold sm:font-normal text-green-600">
             Iniciar <br /> sesión
           </p>
         </div>

@@ -34,7 +34,7 @@ body {
 }
 
 
-.swiper {
+/* .swiper {
   width: 100%;
   height: 100%;
 }
@@ -44,7 +44,6 @@ body {
   font-size: 18px;
   background: #fff;
 
-  /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,7 +53,7 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-}
+} */
 
 .swiper .swiper-pagination-bullets {
   position: relative;
@@ -73,9 +72,16 @@ body {
   background-color: #3e8238 !important;
 }
 
-@media (max-width: 410px) {
+@media (min-width: 200px) {
   .swiper .swiper-pagination-bullets {
     position: relative;
     bottom: 60px !important;
+  }  
+}
+
+@media (min-width: 640px) {
+  .swiper .swiper-pagination-bullets {
+    position: relative;
+    bottom: 85px !important;
   }  
 }

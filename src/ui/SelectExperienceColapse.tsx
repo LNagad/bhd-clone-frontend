@@ -25,12 +25,13 @@ const SelectExperienceColapse = () => {
   return (
     <>
       <button
-        className="w-full py-3 text-white uppercase text-sm flex justify-center items-center gap-x-3"
+        className="w-full flex justify-center items-center text-white uppercase gap-x-3 
+        py-3 sm:py-5 text-sm sm:text-lg"
         style={{ fontWeight: 500 }}
         onClick={() => setVisible((p) => !p)}
       >
-        <ShopSVG fontSize={16} fill="#fff" />
-        <p style={{ fontWeight: 500, fontSize: 14 }}>Personal</p>
+        <ShopSVG className="text-lg" fill="#fff" />
+        <p style={{ fontWeight: 500 }}>Personal</p>
         <FontAwesomeIcon fontSize={16} icon={faAngleDown} bounce={!visible} />
       </button>
 
@@ -39,7 +40,7 @@ const SelectExperienceColapse = () => {
           <Link key={item.link} href={item.link} onClick={handleSetCollapseVisibleWithDelay}>
             <div
               className={`px-8 py-3 flex items-center gap-x-2 
-              ${item.link === window.location.pathname && "bg-primary-selected "}`}
+              ${item.link === window.location.pathname ? "bg-primary-selected " : "hover:bg-green-700"}`}
             >
               <ShopSVG fontSize={22} fill="#fff" />
               <p
