@@ -48,10 +48,9 @@ body {
 
 /*----------------------------------------------- login */
 .ripple-button {
-  position: relative;
   cursor: pointer;
   overflow: hidden;
-  @apply rounded-lg bg-primary hover:bg-green-800 transition-all duration-500 text-white font-semibold text-sm py-2 
+  @apply relative rounded-lg bg-primary hover:bg-green-800 transition-all duration-500 text-white font-semibold text-sm py-2 
 }
 
 
