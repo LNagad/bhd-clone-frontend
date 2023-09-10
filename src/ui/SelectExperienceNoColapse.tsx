@@ -1,0 +1,32 @@
+import Link from 'next/link';
+
+const SelectExperienceNoColapse = () => {
+  const experienceMenuItems = [
+    { name: 'Personal', link: '/' },
+    { name: 'Pyme', link: '/pyme' },
+    { name: 'Corporativa y Empresarial', link: '/empresa' },
+  ];
+  return (
+    <div className="flex bg-white gap-x-3 px-6">
+      {experienceMenuItems.map((item) => {
+        const isSelected = item.link === window.location.pathname;
+      
+        return (
+          <Link key={item.link} href={item.link}>
+            <div
+              className={`experience__item__div px-8 py-3 flex items-center gap-x-2 rounded-b-2xl
+                ${isSelected? 'bg-primary-selected text-white': 'text-gray-400 hover:text-white hover:transition-all duration-700' }`}
+            >
+              <p className='uppercase font-bold text-sm'>
+                {item.name}
+              </p>
+            </div>
+          </Link>
+        );
+      }
+      )}
+    </div>
+  );
+};
+
+export default SelectExperienceNoColapse;

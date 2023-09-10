@@ -8,6 +8,15 @@ html,
 body {
   position: relative;
   height: 100%;
+  background-color: rgb(255,254,254);
+  overflow-x: hidden;
+}
+
+.bg-body{
+  background-color: rgb(255,254,254);
+}
+.shadow-modal-login {
+  box-shadow: -4px -4px 22px -3px rgba(0,0,0,0.1);
 }
 
 .ReactCollapse--collapse {
@@ -31,6 +40,42 @@ body {
 
 .text-primary {
   color: #54ac4c;
+}
+
+.experience__item__div:hover {
+  background-color: #75ba6f;
+}
+
+/*----------------------------------------------- login */
+.ripple-button {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  @apply rounded-lg bg-primary hover:bg-green-800 transition-all duration-500 text-white font-semibold text-sm py-2 
+}
+
+
+
+.ripple-span{
+  position: absolute;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: ripple-animation 0.5s linear infinite;
+}
+
+@keyframes ripple-animation {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
 }
 
 
@@ -75,7 +120,7 @@ body {
 @media (min-width: 200px) {
   .swiper .swiper-pagination-bullets {
     position: relative;
-    bottom: 60px !important;
+    bottom: 80px !important;
   }  
 }
 
@@ -83,5 +128,12 @@ body {
   .swiper .swiper-pagination-bullets {
     position: relative;
     bottom: 85px !important;
+  }  
+}
+
+@media (min-width: 640px) {
+  .login__container {
+    width: 420px;
+    max-width: 450px;
   }  
 }

@@ -1,23 +1,23 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
+import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { useEffect, useRef, useState } from "react";
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { useEffect, useRef, useState } from 'react';
 
 const SwiperFullScreen = () => {
 
   const images = [
-    { src: "/slide1.jpg", alt: "slide 1" },
-    { src: "/slide2.jpg", alt: "slide 2" },
-    { src: "/slide3.png", alt: "slide 2" },
+    { src: '/slide1.jpg', alt: 'slide 1' },
+    { src: '/slide2.jpg', alt: 'slide 2' },
+    { src: '/slide3.png', alt: 'slide 2' },
   ];
 
   return (

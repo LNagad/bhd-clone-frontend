@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 interface Props {
   children: React.ReactNode;
@@ -8,15 +8,15 @@ interface Props {
 
 const OtherSectionsBurble = ({ children, text, link }: Props) => {
   
-  const wrappedText = text.replace(" ", " <br> ");
+  const wrappedText = text.replace(' ', ' <br> ');
 
   return (
     <Link
-      href={link || "#"}
+      href={link || '#'}
       className="canales__container__item w-[100%] xs:w-[30%] sm:w-auto flex flex-col items-center gap-y-4"
     >
       <div
-        className="canales__container__item__icon h-[70px] w-[70px] sm:h-[90px] w-[90px] rounded-full bg-green-600 
+        className="canales__container__item__icon w-[70px] h-[70px] sm:h-[90px] sm:w-[90px] rounded-full bg-green-600 
         bg-opacity-20 flex justify-center items-center"
       >
         {children}

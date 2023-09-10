@@ -1,26 +1,23 @@
-"use client";
-import { useState } from "react";
-import { UnmountClosed } from "react-collapse";
+'use client';
+import Link from 'next/link';
+import { useState } from 'react';
+import { UnmountClosed } from 'react-collapse';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-
-import { CloseMarkSVG, ShopSVG } from "./icons";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { CloseMarkSVG, ShopSVG } from './icons';
+import { BiChevronDown }from 'react-icons/bi';
 
 const SelectExperienceColapse = () => {
   const [visible, setVisible] = useState(false);
 
   const experienceMenuItems = [
-    { name: "Personal", link: "/"},
-    { name: "Pyme", link: "/pyme" },
-    { name: "Corporativa y Empresarial", link: "/empresa"},
+    { name: 'Personal', link: '/'},
+    { name: 'Pyme', link: '/pyme' },
+    { name: 'Corporativa y Empresarial', link: '/empresa'},
   ];
 
   const handleSetCollapseVisibleWithDelay = () => {
     setTimeout(() => setVisible(false), 1000);
-  }
+  };
 
   return (
     <>
@@ -32,7 +29,8 @@ const SelectExperienceColapse = () => {
       >
         <ShopSVG className="text-lg" fill="#fff" />
         <p style={{ fontWeight: 500 }}>Personal</p>
-        <FontAwesomeIcon fontSize={16} icon={faAngleDown} bounce={!visible} />
+        {/* <FontAwesomeIcon fontSize={16} icon={faAngleDown} bounce={!visible} /> */}
+        <BiChevronDown className={`text-white text-3xl font-bold me-2 ${visible ? 'animate-none' : 'animate-bounce'}`} />
       </button>
 
       <UnmountClosed isOpened={visible}>
@@ -40,7 +38,7 @@ const SelectExperienceColapse = () => {
           <Link key={item.link} href={item.link} onClick={handleSetCollapseVisibleWithDelay}>
             <div
               className={`px-8 py-3 flex items-center gap-x-2 
-              ${item.link === window.location.pathname ? "bg-primary-selected " : "hover:bg-green-700"}`}
+              ${item.link === window.location.pathname ? 'bg-primary-selected ' : 'hover:bg-green-700'}`}
             >
               <ShopSVG fontSize={22} fill="#fff" />
               <p

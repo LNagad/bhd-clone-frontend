@@ -1,9 +1,14 @@
-import { NotFoundSVG } from "@/ui";
+import { HomeNavbar, NotFoundSVG } from '@/ui';
 
 export default function NotFoundPage() {
   return (
-    <div>
-      <NotFoundSVG width="100%" />
-    </div>
+    <>
+      <header className="w-screen">
+        <HomeNavbar />
+      </header>
+      <div className='flex justify-center relative'>
+        <NotFoundSVG className="w-full md:w-[50%] md:absolute md:-top-16" />
+      </div>
+    </>
   );
 }

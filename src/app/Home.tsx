@@ -1,4 +1,5 @@
-import { SwiperFullScreen } from "@/ui";
+import { SearchInput } from '@/components';
+import { SwiperFullScreen } from '@/ui';
 
 export default function Home() {
   return (
