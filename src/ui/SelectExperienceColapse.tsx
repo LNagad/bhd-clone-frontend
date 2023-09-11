@@ -19,6 +19,14 @@ const SelectExperienceColapse = () => {
     setTimeout(() => setVisible(false), 1000);
   };
 
+  let location = '';
+
+  if (typeof window === 'undefined'){
+    location = '/';
+  } else {
+    location = window.location.pathname;
+  }
+
   return (
     <>
       <button
@@ -29,7 +37,6 @@ const SelectExperienceColapse = () => {
       >
         <ShopSVG className="text-lg" fill="#fff" />
         <p style={{ fontWeight: 500 }}>Personal</p>
-        {/* <FontAwesomeIcon fontSize={16} icon={faAngleDown} bounce={!visible} /> */}
         <BiChevronDown className={`text-white text-3xl font-bold me-2 ${visible ? 'animate-none' : 'animate-bounce'}`} />
       </button>
 
@@ -38,7 +45,7 @@ const SelectExperienceColapse = () => {
           <Link key={item.link} href={item.link} onClick={handleSetCollapseVisibleWithDelay}>
             <div
               className={`px-8 py-3 flex items-center gap-x-2 
-              ${item.link === window.location.pathname ? 'bg-primary-selected ' : 'hover:bg-green-700'}`}
+              ${item.link ===  location? 'bg-primary-selected ' : 'hover:bg-green-700'}`}
             >
               <ShopSVG fontSize={22} fill="#fff" />
               <p

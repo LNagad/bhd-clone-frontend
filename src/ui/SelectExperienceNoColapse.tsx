@@ -6,10 +6,19 @@ const SelectExperienceNoColapse = () => {
     { name: 'Pyme', link: '/pyme' },
     { name: 'Corporativa y Empresarial', link: '/empresa' },
   ];
+
+  let location = '';
+
+  if (typeof window === 'undefined'){
+    location = '/';
+  } else {
+    location = window.location.pathname;
+  }
+
   return (
     <div className="flex bg-white gap-x-3 px-6">
       {experienceMenuItems.map((item) => {
-        const isSelected = item.link === window.location.pathname;
+        const isSelected = item.link === location;
       
         return (
           <Link key={item.link} href={item.link}>
