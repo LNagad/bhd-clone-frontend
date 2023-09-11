@@ -50,10 +50,7 @@ body {
 .ripple-button {
   cursor: pointer;
   overflow: hidden;
-  @apply relative rounded-lg bg-primary hover:bg-green-800 transition-all duration-500 text-white font-semibold text-sm py-2 
 }
-
-
 
 .ripple-span{
   position: absolute;

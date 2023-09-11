@@ -1,0 +1,23 @@
+
+.loginform__input__user .tooltiptext {
+    visibility: hidden;
+    /* top: 100%;
+    left: 50%; */
+    /* Use half of the width (120/2 = 60), to center the tooltip */
+    
+    text-align: center;
+    border-radius: 6px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+
+    /* Animación */
+    opacity: 0;
+    transition: opacity 0.7s;
+}
+
+.loginform__input__user:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

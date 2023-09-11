@@ -12,8 +12,8 @@ const Login = () => {
       <Image
         className="w-full z-10 h-full object-cover"
         src="/background-login.webp"
-        width="1920"
-        height="1080"
+        width={700}
+        height={700}
         alt="bg"
       />
       <div className="absolute z-40 w-full h-full top-0">
@@ -24,8 +24,8 @@ const Login = () => {
                 <Image
                   className="w-28 md:w-36"
                   src={'/bhd_logo.png'}
-                  width={100}
-                  height={0}
+                  width={150}
+                  height={150}
                   alt=" logo"
                 />
               </Link>
