@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { CloseMarkSVG } from "@/ui";
+import { useState } from 'react';
+import { CloseMarkSVG } from '@/ui';
 
 const SearchInput = () => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
@@ -23,7 +23,7 @@ const SearchInput = () => {
 
       {input.length > 0 && (
         <button
-          onClick={() => setInput("")}
+          onClick={() => setInput('')}
           className="absolute right-10 sm:right-14 top-0 bottom-0"
         >
           <CloseMarkSVG className="sm:text-xl" fill="#878682" />
