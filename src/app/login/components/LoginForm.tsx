@@ -35,17 +35,19 @@ const LoginForm = () => {
             </span>
           </label>
 
-          <div className={`loginform__input__user relative flex items-center px-4 ring-1 gap-x-1
+          <div className={`loginform__input__user relative flex items-center ps-4 ring-1 gap-x-1
            ring-gray-300 rounded-lg focus:ring-1 ${formErrors.user?.error && 'ring-red-500'}`}>
             <FiUser className="text-gray-500 text-xl" />
             <input
-              className="w-full text-[13px] font-semibold text-gray-600 py-3 h-full focus:outline-none 
-              focus:ring-0"
+              className="w-full rounded-lg text-[13px] font-semibold text-gray-600 py-3 h-full focus:outline-none 
+              focus:ring-0 disabled:bg-transparent"
               name="user"
               id="user"
               value={formValues.user}
               onBlur={handleInputBlur}
               onChange={handleInputChange}
+              disabled={isLoading}
+              autoComplete='off'
               type="text"
               maxLength={25}
             />
@@ -66,18 +68,22 @@ const LoginForm = () => {
             </span>
           </label>
 
-          <div className={`flex items-center px-4 ring-1 gap-x-1 ring-gray-300 rounded-lg 
+          <div className={`w-full flex items-center ps-4 ring-1 gap-x-1 ring-gray-300 rounded-lg 
           focus:ring-1 ${formErrors.password?.error && 'ring-red-500'}`}>
             <BiLockAlt className="text-gray-500 text-xl" />
             <input
-              className="w-full text-[13px] font-semibold text-gray-600 py-3 h-full focus:outline-none focus:ring-0 "
+              className="w-full text-[13px] rounded-lg font-semibold text-gray-600 py-3 h-full 
+              focus:outline-none focus:ring-0 disabled:bg-transparent"
               name="password"
               id="password"
               value={formValues.password}
               onBlur={handleInputBlur}
               onChange={handleInputChange}
+              disabled={isLoading}
+              autoComplete='off'
               type="password"
               maxLength={25}
+              
             />
           </div>
           <span className='text-red-500 text-xs font-bold'>{formErrors.password?.message}</span>
