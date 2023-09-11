@@ -8,12 +8,14 @@ import LoginModal from './LoginModal';
 import './home.css';
 
 import { ResponsiveContextProvider } from '@/contexts';
+import Link from 'next/link';
 
 const HomeLogin = () => {
   const [showModal, setShowModal] = useState(false);
  
   return (
-    <div
+    <Link href="/login"
+
       onMouseEnter={() => setShowModal(true)}
       onMouseLeave={() => setShowModal(false)}
       className={`relative w-[25%] md:w-[12rem] flex items-center justify-end
@@ -35,7 +37,7 @@ const HomeLogin = () => {
         <LoginModal showModal={showModal} />
       </ResponsiveContextProvider>
 
-    </div>
+    </Link>
   );
 };
 
