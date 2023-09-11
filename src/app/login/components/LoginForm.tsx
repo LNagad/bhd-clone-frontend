@@ -6,6 +6,8 @@ import { CgAsterisk } from 'react-icons/cg';
 
 import './loginForm.css';
 import { useLoginForm } from '../hooks';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const LoginForm = () => {
@@ -21,11 +23,24 @@ const LoginForm = () => {
     formValues,
     formValid,
     inputTouched,
-    isLoading
+    isLoading,
+    loginErrors
   } = useLoginForm();
   
   return (
     <form onSubmit={handleSubmit}>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <div className="flex flex-col w-full h-full gap-y-4">
         <div className="flex flex-col gap-y-2">
           <label htmlFor="user">
@@ -104,9 +119,11 @@ const LoginForm = () => {
           )}
         </button>
 
-        <div className='w-full flex flex-col gap-y-2 bg-red-200 rounded-s-[4px] px-6 py-4 border-l-[6px] border-red-600'>
-          <p className='text-red-700  text-xs font-semibold'>Usuario o contraseña inválidos.</p>        
-        </div>
+        {loginErrors.length > 0 && loginErrors.map((error, index) => (
+          <div key={error}  className='w-full flex flex-col gap-y-2 bg-red-200 rounded-s-[4px] px-6 py-4 border-l-[6px] border-red-600'>
+            <p className='text-red-700  text-xs font-semibold'>{error}.</p>        
+          </div>
+        ))}
 
       </div>
     </form>
