@@ -18,7 +18,7 @@ const Login = () => {
       />
       <div className="absolute z-40 w-full h-full top-0">
         <div className="w-full h-full flex flex-col  sm:justify-center sm:m-0 items-center ">
-          <div className="w-[90%] login__container xs:mt-40 sm:mt-0 bg-body p-10 rounded-xl shadow-lg">
+          <div className="w-[90%] login__container xs:mt-32 sm:mt-0 bg-body p-10 rounded-xl shadow-lg">
             <div className="flex items-center w-full justify-center mb-4">
               <Link href="/">
                 <Image
