@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import { toast } from 'react-toastify';
-import { ApiResponse, LoginResponse } from '@/models';
+import { ApiResponse, LoginResponse } from '@/types';
 import { useRouter } from 'next/navigation';
 
 interface myFormErrors {
@@ -71,12 +71,16 @@ const useLoginForm = () => {
           if (loginData != null) {
 
             localStorage.setItem('token', loginData.jwtToken);
-            delete loginData.jwtToken;
-  
-            if (loginData.hasError != null) delete loginData.hasError;
-            if (loginData.refreshToken != null)   delete loginData.refreshToken;
-  
-            localStorage.setItem('user', JSON.stringify(loginData));
+         
+            localStorage.setItem('user', JSON.stringify({
+              id: loginData.id,
+              userName: loginData.userName,
+              email: loginData.email,
+              roles: loginData.roles,
+              clientId: loginData.clientId,
+              isVerified: loginData.isVerified,
+              jwtToken: loginData.jwtToken,
+            }));
 
             //todo: use next auth router instead of localstorage auth
             router.push('/dashboard');

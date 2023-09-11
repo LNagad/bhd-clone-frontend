@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import axios, { AxiosError } from 'axios';
-import { ApiResponse } from '@/models';
+import { ApiResponse } from '@/types';
 
 const BACKEND_API = process.env.BACKEND_API;
 
