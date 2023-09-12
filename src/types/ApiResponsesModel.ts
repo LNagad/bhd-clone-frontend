@@ -2,8 +2,8 @@
 
 export interface ApiResponse {
     succeeded: boolean;
-    message:   string;
-    errors:    string[];
+    Message:   string;
+    Errors:    string[];
     data?:      {};
 }
 

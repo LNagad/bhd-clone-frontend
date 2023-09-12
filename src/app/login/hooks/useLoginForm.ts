@@ -4,6 +4,7 @@ import axios, { AxiosError } from 'axios';
 import { toast } from 'react-toastify';
 import { ApiResponse, LoginResponse } from '@/types';
 import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
 
 interface myFormErrors {
   user?: { error: boolean; message: string };
@@ -57,54 +58,23 @@ const useLoginForm = () => {
       console.log('Formulario válido');
       setIsLoading(true);
       
-
       try {
-        const resp = await axios.post('/api/login', formValues);
-        
-        const data: ApiResponse = resp.data;
-        
-        if (data.succeeded) {
+        const res = await signIn('credentials', {
+          email: formValues.user,
+          password: formValues.password,
+          redirect: false
+        });
 
-          setLoginErrors([]);
-          const loginData: LoginResponse = data.data as LoginResponse;
-          
-          if (loginData != null) {
-
-            localStorage.setItem('token', loginData.jwtToken);
-         
-            localStorage.setItem('user', JSON.stringify({
-              id: loginData.id,
-              userName: loginData.userName,
-              email: loginData.email,
-              roles: loginData.roles,
-              clientId: loginData.clientId,
-              isVerified: loginData.isVerified,
-              jwtToken: loginData.jwtToken,
-            }));
-
-            //todo: use next auth router instead of localstorage auth
-            router.push('/dashboard');
-          }
+        if (res?.error) {
+          setLoginErrors([res.error]);
+          toast.error('One or more validation errors ocurred');
         }
+
+        return router.push('/dashboard');
 
       } catch (error) {
-        if (error instanceof AxiosError ) {
-          
-          const errorResponse = error.response?.data;
-          console.log(errorResponse);
-          
-          if (errorResponse.Errors != null) {
-            setLoginErrors(errorResponse.Errors);
-            toast.error(errorResponse.Message);
-          } else {
-            setLoginErrors([errorResponse.Message]);
-            toast.error('One or more validation errors ocurred');
-          }
-          
-          
-        }
+        console.log(error);
       }
-
 
       setIsLoading(false);
     } else {

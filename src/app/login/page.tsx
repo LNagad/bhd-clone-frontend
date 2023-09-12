@@ -6,7 +6,11 @@ import { FaArrowLeftLong } from 'react-icons/fa6';
 import Link from 'next/link';
 import LoginForm from './components/LoginForm';
 
-const Login = () => {
+interface IProps {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
+
+const LoginPage = ({ searchParams } : IProps) => {
   return (
     <section className="w-screen h-screen relative">
       <Image
@@ -32,6 +36,12 @@ const Login = () => {
             </div>
             <div>
               <LoginForm />
+              {searchParams?.message && (
+                <div className='w-full mt-6 flex flex-col gap-y-2 bg-red-200 rounded-s-[4px] px-6 py-4 border-l-[6px] border-red-600'>
+                  <p className='text-red-700  text-xs font-semibold'>{searchParams.message}</p>        
+                </div>
+              )}
+
             </div>
 
           </div>
@@ -45,4 +55,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;
