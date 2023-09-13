@@ -1,4 +1,5 @@
 export { default as AccesosRapidos } from './dashboard/AccesosRapidos';
+export { default as DivisaSwipper } from './dashboard/DivisaSwipper';
 export { default as MobileOptionsSection } from './mobileView/MobileOptionsSection';
 export { default as MobileOptionsbtn } from './navbar/MobileOptionsbtn';
 export { default as NavbarHeader } from './navbar/NavbarHeader';

@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react';
 import { BsTelephone } from 'react-icons/bs';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 
-import { AccesosRapidos } from './components';
+import { AccesosRapidos, DivisaSwipper } from './components';
 
 const BankDashboard = () => {
   
@@ -50,15 +50,18 @@ const BankDashboard = () => {
         
         <div className='large_screen__view hidden sm:flex flex-col w-[41%] gap-y-4'>
 
-          <section className='bg-white px-6 py-8 shadow-sm w-full  rounded-md'>
+          <section className='w-full bg-white h-[64px] shadow-sm px-6 rounded-md flex justify-between items-center'>
             <h6 className='text-lg text-gray-500 font-medium text-opacity-75'>Divisas</h6>
+            <div className='w-[75%] h-full'>
+              <DivisaSwipper />
+            </div>
           </section>
 
-          <section className='bg-white px-6 py-8 shadow-sm w-full rounded-md flex flex-col gap-y-4'>
+          <section className='w-full bg-white px-6 py-8 shadow-sm rounded-md flex flex-col gap-y-4'>
             <AccesosRapidos />
           </section>
 
-          <section className='bg-white px-6 py-8 shadow-sm w-full  rounded-md'>
+          <section className='w-full bg-white px-6 py-8 shadow-sm  rounded-md'>
             <h6 className='text-lg text-gray-500 font-medium text-opacity-75'>Calendario de pagos</h6>
           </section>
           

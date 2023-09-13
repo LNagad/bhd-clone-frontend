@@ -10,7 +10,6 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { useEffect, useRef, useState } from 'react';
 
 const SwiperFullScreen = () => {
 

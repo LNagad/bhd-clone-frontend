@@ -13,14 +13,14 @@ export const metadata: Metadata = {
 };
 interface Props {
   children: React.ReactNode;
-  session: any;
 }
-export default function RootLayout({ children, session }: Props ) {
+
+export default function RootLayout({ children }: Props ) {
   return (
     <html lang="en">
 
       <body className={inter.className}>
-        <Providers session={session}>
+        <Providers>
           {children}
         </Providers>
       </body>

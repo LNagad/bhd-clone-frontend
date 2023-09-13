@@ -1,5 +1,6 @@
 import { SearchInput } from '@/components';
 import { SwiperFullScreen } from '@/ui';
+import './home.css';
 
 export default function Home() {
   return (
