@@ -50,7 +50,7 @@ const BankDashboard = () => {
         
         <div className='large_screen__view hidden sm:flex flex-col w-[41%] gap-y-4'>
 
-          <section className='w-full bg-white h-[64px] shadow-sm px-6 rounded-md flex justify-between items-center'>
+          <section className='w-full bg-white h-[84px] shadow-sm px-6 rounded-md flex justify-between items-center'>
             <h6 className='text-lg text-gray-500 font-medium text-opacity-75'>Divisas</h6>
             <div className='w-[75%] h-full'>
               <DivisaSwipper />
