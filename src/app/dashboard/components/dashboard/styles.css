@@ -1,0 +1,12 @@
+.acceso__rapido__li__icon{
+    @apply text-gray-500 text-2xl text-opacity-75;
+}
+
+.acceso__rapido__li__text{
+    @apply text-gray-600 font-medium text-sm;
+}
+
+.acceso__rapido__li:hover .acceso__rapido__li__icon,
+.acceso__rapido__li:hover .acceso__rapido__li__text {
+    color: #54ac4c !important;
+}
