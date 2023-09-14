@@ -24,9 +24,9 @@ const SelectExperienceNoColapse = () => {
           <Link key={item.link} href={item.link}>
             <div
               className={`experience__item__div px-8 py-3 flex items-center gap-x-2 rounded-b-2xl
-                ${isSelected? 'bg-primary-selected text-white': 'text-gray-400 hover:text-white hover:transition-all duration-700' }`}
+                ${isSelected? 'bg-primary-selected text-white': 'text-gray-500 hover:text-white hover:transition-all duration-700' }`}
             >
-              <p className='uppercase font-bold text-sm'>
+              <p className='uppercase font-medium text-xs'>
                 {item.name}
               </p>
             </div>

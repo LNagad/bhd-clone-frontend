@@ -1,7 +1,7 @@
-import { BarsSVG } from './icons';
 import Link from 'next/link';
 import Image from 'next/image';
-import { SelectExperienceSection } from '.';
+import { BarsSVG } from './icons';
+import SelectExperienceSection from './SelectExperienceSection';
 import HomeLogin from './HomeLogin';
 
 
@@ -15,7 +15,7 @@ export const HomeNavbar = () => {
           <BarsSVG className="text-xl sm:text-3xl" fill="#8b8f8b" />
         </div>
 
-        <div className="flex items-center w-[45%] justify-end md:justify-start m-0">
+        <div className="flex items-center w-[85%] justify-end md:justify-start m-0">
           <Link href="/">
             <Image
               className="w-28 md:w-36"
@@ -25,6 +25,44 @@ export const HomeNavbar = () => {
               alt=" logo"
             />
           </Link>
+
+          <ul className='flex text-gray-700 justify-center w-full'>
+            <li>
+              <Link href="#">
+                <p className="font-normal transition-all duration-500  hover:text-green-600 text-sm sm:text-base ml-5 md:ml-10">
+                  Tu negocio
+                </p>
+              </Link>
+            </li>
+            <li>
+              <Link href="#">
+                <p className="font-normal transition-all duration-500  hover:text-green-600 text-sm sm:text-base ml-5 md:ml-10">
+                  Gerencia
+                </p>
+              </Link>
+            </li>
+            <li>
+              <Link href="#">
+                <p className="font-normal transition-all duration-500  hover:text-green-600 text-sm sm:text-base ml-5 md:ml-10">
+                  Empleados
+                </p>
+              </Link>
+            </li>
+            <li>
+              <Link href="#">
+                <p className="font-normal transition-all duration-500  hover:text-green-600 text-sm sm:text-base ml-5 md:ml-10">
+                  Proveedores
+                </p>
+              </Link>
+            </li>
+            <li>
+              <Link href="#">
+                <p className="font-normal transition-all duration-500  hover:text-green-600 text-sm sm:text-base ml-5 md:ml-10">
+                  Clientes
+                </p>
+              </Link>
+            </li>
+          </ul>
         </div>
 
         <HomeLogin />

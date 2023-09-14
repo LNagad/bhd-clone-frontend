@@ -1,3 +1,4 @@
+export { default as Footer } from './Footer';
 export { default as HomeLogin } from './HomeLogin';
 export { default as HomeNavbar } from './HomeNavbar';
 export { default as LoginModal } from './LoginModal';
@@ -6,3 +7,4 @@ export { default as SelectExperienceNoColapse } from './SelectExperienceNoColaps
 export { default as SelectExperienceSection } from './SelectExperienceSection';
 export { default as SwiperFullScreen } from './SwiperFullScreen';
 export * from './icons';
+export * from './index';

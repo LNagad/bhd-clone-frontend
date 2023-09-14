@@ -24,7 +24,7 @@ const SearchInput = () => {
       {input.length > 0 && (
         <button
           onClick={() => setInput('')}
-          className="absolute right-10 sm:right-14 top-0 bottom-0"
+          className="absolute right-10 sm:right-14 lg:right-24 top-0 bottom-0"
         >
           <CloseMarkSVG className="sm:text-xl" fill="#878682" />
         </button>

@@ -1,5 +1,5 @@
 import { OtherSectionsBurble, SearchInput } from '@/components';
-import { HomeNavbar, SwiperFullScreen } from '@/ui';
+import { Footer, HomeNavbar, SwiperFullScreen } from '@/ui';
 import { TbCalculator, TbPhoneCall } from 'react-icons/tb';
 import { LiaMoneyCheckAltSolid } from 'react-icons/lia';
 
@@ -25,10 +25,8 @@ export default function Home() {
       link: '/calculadora',
     },
   ];
-  return (
-    
+  return (   
     <>
-
       <header className="w-screen">
         <HomeNavbar />
       </header>
@@ -53,6 +51,10 @@ export default function Home() {
     
         <section className="recomendaciones"></section>
         <section className="noticias"></section>
+
+        <section className="footer w-full">
+          <Footer />
+        </section>
       </main>
     </>
   );
