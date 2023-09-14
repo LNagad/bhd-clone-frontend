@@ -1,30 +1,25 @@
 import { OtherSectionsBurble, SearchInput } from '@/components';
-import { Colors } from '@/enums';
 import { HomeNavbar, SwiperFullScreen } from '@/ui';
-import {
-  faCalculator,
-  faMoneyBill,
-  faPhone,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { TbCalculator, TbPhoneCall } from 'react-icons/tb';
+import { LiaMoneyCheckAltSolid } from 'react-icons/lia';
 
 export default function Home() {
   const canales = [
     {
-      icon: <FontAwesomeIcon icon={faPhone} size="2x" color={Colors.primary} />,
+      icon: <TbPhoneCall className='text-5xl text-primary canales_container-item-icon' />,
       text: 'Canales de Contacto',
       link: '/canales-contacto',
     },
     {
       icon: (
-        <FontAwesomeIcon icon={faMoneyBill} size="2x" color={Colors.primary} />
+        <LiaMoneyCheckAltSolid className='text-5xl text-primary canales_container-item-icon' />
       ),
       text: 'Canales de Remesas',
       link: '/canales-remesas',
     },
     {
       icon: (
-        <FontAwesomeIcon icon={faCalculator} size="2x" color={Colors.primary} />
+        <TbCalculator className='text-5xl text-primary canales_container-item-icon' />
       ),
       text: 'Calculadora',
       link: '/calculadora',
@@ -47,7 +42,7 @@ export default function Home() {
           >
             <SearchInput />
           </div>
-          <div className="canales__container mt-10 sm: mt-16 flex justify-center flex-wrap gap-x-16 sm:gap-x-10 gap-y-8">
+          <div className="canales__container mt-10 sm:mt-16 flex justify-center flex-wrap gap-x-16 sm:gap-x-10 gap-y-8">
             {canales.map((canal, index) => (
               <OtherSectionsBurble key={canal.link} text={canal.text}>
                 {canal.icon}

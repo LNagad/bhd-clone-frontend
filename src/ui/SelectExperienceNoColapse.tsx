@@ -16,7 +16,7 @@ const SelectExperienceNoColapse = () => {
   }
 
   return (
-    <div className="flex bg-white gap-x-3 px-6">
+    <div className="hidden sm:flex bg-white gap-x-3 px-6">
       {experienceMenuItems.map((item) => {
         const isSelected = item.link === location;
       

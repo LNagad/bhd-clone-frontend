@@ -1,31 +1,30 @@
 .swiper .swiper-pagination-bullets {
+  position: relative;
+  bottom: 30px !important;
+}
+
+.swiper .swiper-pagination-bullet {
+  background-color: #ffffff !important;
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+
+}
+
+.swiper .swiper-pagination-bullet-active {
+  background-color: #3e8238 !important;
+}
+
+@media (min-width: 200px) {
+  .swiper .swiper-pagination-bullets {
     position: relative;
-    bottom: 30px !important;
+    bottom: 80px !important;
   }
-  
-  .swiper .swiper-pagination-bullet {
-    background-color: #ffffff !important;
-    width: 12px;
-    height: 12px;
-    opacity: 1;
-    
+}
+
+@media (min-width: 640px) {
+  .swiper .swiper-pagination-bullets {
+    position: relative;
+    bottom: 85px !important;
   }
-  
-  .swiper .swiper-pagination-bullet-active {
-    background-color: #3e8238 !important;
-  }
-  
-  @media (min-width: 200px) {
-    .swiper .swiper-pagination-bullets {
-      position: relative;
-      bottom: 80px !important;
-    }  
-  }
-  
-  @media (min-width: 640px) {
-    .swiper .swiper-pagination-bullets {
-      position: relative;
-      bottom: 85px !important;
-    }  
-  }
-  
+}

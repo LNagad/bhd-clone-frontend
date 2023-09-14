@@ -30,7 +30,7 @@ const SelectExperienceColapse = () => {
   return (
     <>
       <button
-        className="w-full flex justify-center items-center text-white uppercase gap-x-3 
+        className="w-full flex sm:hidden justify-center items-center text-white uppercase gap-x-3 
         py-3 sm:py-5 text-sm sm:text-lg"
         style={{ fontWeight: 500 }}
         onClick={() => setVisible((p) => !p)}
