@@ -1,3 +1,6 @@
+![image](https://github.com/LNagad/bhd-clone-frontend/assets/74669208/2cbc93b2-c078-4338-8a48-b6da56db0ec5)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
