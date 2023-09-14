@@ -1,23 +1,17 @@
-'use client';
 
-import Link from 'next/link';
 import { useSession } from 'next-auth/react';
-import { BsTelephone } from 'react-icons/bs';
-import { AiOutlineInfoCircle } from 'react-icons/ai';
 
 import { AccesosRapidos, CentroContacto, DivisaSwipper, ResumenProductos } from './components';
 
 
 const BankDashboard = () => {
   
-  const { data : session} =  useSession();
-  
   return (
     <main className='bg-gray-100 lg:px-[110px] lg:py-5 h-full'>
       <section className='w-full h-full flex gap-x-4 flex-wrap'>
         
         <div className='large_screen__view hidden sm:flex flex-col w-[56%] gap-y-4'>
-          <section className='bg-white p-4 shadow-sm w-full flex flex-col gap-y-3 rounded-md'>
+          <section className=''>
             <ResumenProductos />
           </section>
 
@@ -54,7 +48,7 @@ const BankDashboard = () => {
 
         
         <h1>page</h1>
-        {JSON.stringify(session?.user, null, 2)}
+        {/* {JSON.stringify(session?.user, null, 2)} */}
       </section>
     </main>
   );

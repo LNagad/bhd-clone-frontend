@@ -2,6 +2,7 @@ export { default as AccesosRapidos } from './dashboard/AccesosRapidos';
 export { default as CentroContacto } from './dashboard/CentroContacto';
 export { default as DivisaSwipper } from './dashboard/DivisaSwipper';
 export { default as ResumenProductos } from './dashboard/ResumenProductos';
+export { default as PagosTransferenciaModal } from './dashboard/home/PagosTransferenciaModal';
 export * from './index';
 export { default as MobileOptionsSection } from './mobileView/MobileOptionsSection';
 export { default as MobileOptionsbtn } from './navbar/MobileOptionsbtn';
