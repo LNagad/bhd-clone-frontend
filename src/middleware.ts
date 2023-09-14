@@ -9,7 +9,9 @@ export default withAuth(
     
     // console.log(req.nextauth.token);
     // console.log(req.nextauth.token.roles.includes('Basic'));
-    if (req.nextUrl.pathname.startsWith('/dashboard') && 
+    
+    //todo: activate this later
+    if (req.nextUrl.pathname.startsWith('/dashboardx') && 
       ((req.nextauth.token as any)?.roles?.includes(Roles.Basic) === false)) 
     {
       return NextResponse.rewrite(
@@ -23,11 +25,13 @@ export default withAuth(
   }, 
   {
     callbacks: {
-      authorized:({token}) => !!token,
+      authorized:({token}) => true,
+      //todo: activate this later
+      // authorized:({token}) => !!token,
     }
   }
 );
 
-export const config = {
-  matcher: ['/dashboard/:path*' ] //'/api/auth/signup'
-};
+// export const config = {
+//   matcher: ['/dashboard/:path*' ] //'/api/auth/signup'
+// };

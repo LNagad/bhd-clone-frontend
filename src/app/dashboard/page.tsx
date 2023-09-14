@@ -4,8 +4,12 @@ import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import { BsTelephone } from 'react-icons/bs';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
+import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
 
 import { AccesosRapidos, DivisaSwipper } from './components';
+
+import {Accordion, AccordionItem} from '@nextui-org/react';
+
 
 const BankDashboard = () => {
   
@@ -16,8 +20,26 @@ const BankDashboard = () => {
       <section className='w-full h-full flex gap-x-4 flex-wrap'>
         
         <div className='large_screen__view hidden sm:flex flex-col w-[56%] gap-y-4'>
-          <section className='bg-white p-4 shadow-sm w-full rounded-md'>
-            <h6 className='text-lg text-gray-500 font-medium text-opacity-75'>360 - Resumen de Productos</h6>
+          <section className='bg-white p-4 shadow-sm w-full flex flex-col gap-y-3 rounded-md'>
+            <h6 className='text-xl text-gray-500 font-medium text-opacity-90'>360 - Resumen de Productos</h6>
+
+            <div className=' transition-background duration-700 w-full'>
+              <Accordion defaultExpandedKeys={['1']} className='w-full p-0'>
+                <AccordionItem  
+                  key="1" 
+                  aria-label="Cuentas Accordion" 
+                  title="CUENTAS (1)"
+                  className='acordion__cuentas font-medium  w-full text-gray-950 flex flex-col justify-center p-0'
+                  indicator={({ isOpen }) => (isOpen 
+                    ? <AiOutlineMinusCircle className='text-3xl text-green-600 rotate-90' /> 
+                    : <AiOutlinePlusCircle className='text-3xl text-sky-600' />)}>
+                  <div className='bg-white p-0'>
+                    <p>text</p>
+                  </div>
+                </AccordionItem>
+                
+              </Accordion>
+            </div>
           </section>
 
           <div className='w-full flex justify-between'>
@@ -52,7 +74,7 @@ const BankDashboard = () => {
 
           <section className='w-full bg-white h-[84px] shadow-sm px-6 rounded-md flex justify-between items-center'>
             <h6 className='text-lg text-gray-500 font-medium text-opacity-75'>Divisas</h6>
-            <div className='w-[75%] h-full'>
+            <div className='w-[80%] h-full'>
               <DivisaSwipper />
             </div>
           </section>
