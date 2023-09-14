@@ -3,27 +3,32 @@ import { AiOutlineDollar } from 'react-icons/ai';
 import { TbBulb, TbLocationDollar } from 'react-icons/tb';
 import './styles.css';
 
-const AccesosRapidos = () => {
+interface Props {
+  noShowTitle?: boolean;
+  bigTexts?: boolean;
+}
+
+const AccesosRapidos = ( { noShowTitle, bigTexts } : Props) => {
   return (
     <>
-      <h6 className='text-lg text-gray-500 font-medium text-opacity-75'>Accesos rapidos</h6>
+      {!noShowTitle && <h6 className='text-lg text-gray-500 font-medium text-opacity-75'>Accesos rápidos</h6>}
       <ul className='w-full flex flex-col gap-y-4'>
         <li className='acceso__rapido__li w-full'>
-          <Link href='/dashboard' className='w-full flex gap-x-3 items-center'>
-            <AiOutlineDollar className='acceso__rapido__li__icon' />
-            <p className='acceso__rapido__li__text'>Transacciones entre mis productos</p>
+          <Link href='/dashboard' className={`w-full flex ${bigTexts ? 'gap-x-1' : 'gap-x-3'} items-center`}>
+            <AiOutlineDollar className={`acceso__rapido__li__icon  ${bigTexts ? 'text-3xl text-gray-700' : 'text-2xl text-gray-500'}  text-opacity-75`} />
+            <p className={`acceso__rapido__li__text ${bigTexts ? 'text-[16px] font-normal text-black ' : 'text-sm font-medium text-gray-600'}`}>Transacciones entre mis productos</p>
           </Link>
         </li>
         <li className='acceso__rapido__li w-full '>
-          <Link href='/dashboard' className='w-full flex gap-x-3 items-center'>
-            <TbLocationDollar className='acceso__rapido__li__icon' />
-            <p className='acceso__rapido__li__text'>Transferencia a otras cuentas</p>
+          <Link href='/dashboard' className={`w-full flex ${bigTexts ? 'gap-x-1' : 'gap-x-3'} items-center`}>
+            <TbLocationDollar className={`acceso__rapido__li__icon  ${bigTexts ? 'text-3xl text-gray-700' : 'text-2xl'} text-gray-500  text-opacity-75`} />
+            <p className={`acceso__rapido__li__text ${bigTexts ? 'text-[16px] font-normal text-black break-all' : 'text-sm font-medium text-gray-600'}`}>Transferencia a otras cuentas</p>
           </Link>
         </li>
         <li className='acceso__rapido__li w-full'>
-          <Link href='/dashboard' className='w-full flex gap-x-3 items-center'>
-            <TbBulb className='acceso__rapido__li__icon ' />
-            <p className='acceso__rapido__li__text'>Pago de servicios</p>
+          <Link href='/dashboard' className={`w-full flex ${bigTexts ? 'gap-x-1' : 'gap-x-3'} items-center`}>
+            <TbBulb className={`acceso__rapido__li__icon ${bigTexts ? 'text-3xl text-gray-700 ' : 'text-2xl text-gray-500'} text-opacity-75 `} />
+            <p className={`acceso__rapido__li__text ${bigTexts ? 'text-[16px] font-normal text-black ' : 'text-sm font-medium text-gray-600'}`}>Pago de servicios</p>
           </Link>
         </li>
       </ul>
