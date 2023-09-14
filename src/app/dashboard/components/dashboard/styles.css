@@ -39,10 +39,7 @@
 }
 
 .acordion__cuentas > h2 >  button {
-    @apply bg-gray-100 hover:bg-gray-200;
-}
-.acordion__cuentas  button {
-    @apply bg-gray-100 hover:bg-gray-200;
+    @apply bg-gray-100 hover:bg-gray-200 px-5 h-14;
 }
 
 @media (min-width: 1200px) {

@@ -9,6 +9,7 @@ import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
 import { AccesosRapidos, DivisaSwipper } from './components';
 
 import {Accordion, AccordionItem} from '@nextui-org/react';
+import { FiEye } from 'react-icons/fi';
 
 
 const BankDashboard = () => {
@@ -34,7 +35,20 @@ const BankDashboard = () => {
                     ? <AiOutlineMinusCircle className='text-3xl text-green-600 rotate-90' /> 
                     : <AiOutlinePlusCircle className='text-3xl text-sky-600' />)}>
                   <div className='bg-white p-0'>
-                    <p>text</p>
+                    <div className='text-gray-950 font-medium flex flex-col gap-y-2 text-sm'>
+                      <div className='flex w-full gap-y-2 justify-between'>
+                        <p className='uppercase font-semibold text-[16.5px]'>cta.ahorros/nomina</p>
+                        <p>Ahorros</p>
+                      </div>
+                      <div className='flex w-full gap-y-2 justify-between'>
+                        <p>32131470036</p>
+                        <p>Activa</p>
+                      </div>
+                      <button type="button" className='flex items-center gap-x-1 font-semibold text-sky-500 hover:text-sky-600'>
+                        <FiEye className='text-lg' />
+                        <p>Ver detalle de producto</p>
+                      </button>
+                    </div>
                   </div>
                 </AccordionItem>
                 
