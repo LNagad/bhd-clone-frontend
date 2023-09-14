@@ -1,4 +1,5 @@
 export { default as AccesosRapidos } from './dashboard/AccesosRapidos';
+export { default as CentroContacto } from './dashboard/CentroContacto';
 export { default as DivisaSwipper } from './dashboard/DivisaSwipper';
 export { default as ResumenProductos } from './dashboard/ResumenProductos';
 export * from './index';

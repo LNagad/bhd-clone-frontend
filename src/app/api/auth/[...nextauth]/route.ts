@@ -1,11 +1,10 @@
 import NextAuth from 'next-auth';
-import type { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import { ApiResponse, LoginResponse, User } from '@/types';
 
 const BACKEND_API = process.env.BACKEND_API;
 
-export const authOptions: NextAuthOptions = {
+const handler = NextAuth({
   // Configure one or more authentication providers
   providers: [
     // ...Add more providers here
@@ -67,8 +66,6 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: '/login'
   }
-};
-
-const handler = NextAuth(authOptions);
+});
 
 export { handler as GET, handler as POST };
