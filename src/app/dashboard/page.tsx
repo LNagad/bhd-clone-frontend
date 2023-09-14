@@ -1,8 +1,4 @@
-
-import { useSession } from 'next-auth/react';
-
 import { AccesosRapidos, CentroContacto, DivisaSwipper, ResumenProductos } from './components';
-
 
 const BankDashboard = () => {
   
