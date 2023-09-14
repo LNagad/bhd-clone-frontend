@@ -38,8 +38,22 @@
     width: 5px;
 }
 
-.acordion__cuentas > h2 >  button {
-    @apply bg-gray-100 hover:bg-gray-200 px-5 h-14;
+.accordion__cuentas > h2 >  button {
+    @apply bg-gray-100 hover:bg-gray-200 px-5 h-14 rounded-xl;
+}
+
+.acc__edit-account-alias-btn{
+    @apply p-[6px] rounded-full transition-all ease-in-out duration-1000
+}
+.acc__edit-account-alias-btn:hover {
+    @apply bg-gray-200
+}
+
+.acc__edit-account-alias-btn > .acc__edit-account-alias-btn-icon{
+    @apply text-2xl text-gray-600;
+}
+.acc__edit-account-alias-btn:hover > .acc__edit-account-alias-btn-icon {
+    @apply text-2xl text-gray-600;
 }
 
 @media (min-width: 1200px) {

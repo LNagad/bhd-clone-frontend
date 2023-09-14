@@ -4,12 +4,8 @@ import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import { BsTelephone } from 'react-icons/bs';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
-import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai';
 
-import { AccesosRapidos, DivisaSwipper } from './components';
-
-import {Accordion, AccordionItem} from '@nextui-org/react';
-import { FiEye } from 'react-icons/fi';
+import { AccesosRapidos, DivisaSwipper, ResumenProductos } from './components';
 
 
 const BankDashboard = () => {
@@ -22,38 +18,7 @@ const BankDashboard = () => {
         
         <div className='large_screen__view hidden sm:flex flex-col w-[56%] gap-y-4'>
           <section className='bg-white p-4 shadow-sm w-full flex flex-col gap-y-3 rounded-md'>
-            <h6 className='text-xl text-gray-500 font-medium text-opacity-90'>360 - Resumen de Productos</h6>
-
-            <div className=' transition-background duration-700 w-full'>
-              <Accordion defaultExpandedKeys={['1']} className='w-full p-0'>
-                <AccordionItem  
-                  key="1" 
-                  aria-label="Cuentas Accordion" 
-                  title="CUENTAS (1)"
-                  className='acordion__cuentas font-medium  w-full text-gray-950 flex flex-col justify-center p-0'
-                  indicator={({ isOpen }) => (isOpen 
-                    ? <AiOutlineMinusCircle className='text-3xl text-green-600 rotate-90' /> 
-                    : <AiOutlinePlusCircle className='text-3xl text-sky-600' />)}>
-                  <div className='bg-white p-0'>
-                    <div className='text-gray-950 font-medium flex flex-col gap-y-2 text-sm'>
-                      <div className='flex w-full gap-y-2 justify-between'>
-                        <p className='uppercase font-semibold text-[16.5px]'>cta.ahorros/nomina</p>
-                        <p>Ahorros</p>
-                      </div>
-                      <div className='flex w-full gap-y-2 justify-between'>
-                        <p>32131470036</p>
-                        <p>Activa</p>
-                      </div>
-                      <button type="button" className='flex items-center gap-x-1 font-semibold text-sky-500 hover:text-sky-600'>
-                        <FiEye className='text-lg' />
-                        <p>Ver detalle de producto</p>
-                      </button>
-                    </div>
-                  </div>
-                </AccordionItem>
-                
-              </Accordion>
-            </div>
+            <ResumenProductos />
           </section>
 
           <div className='w-full flex justify-between'>
