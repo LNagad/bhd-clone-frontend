@@ -1,8 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import axios, { AxiosError } from 'axios';
 import { toast } from 'react-toastify';
-import { ApiResponse, LoginResponse } from '@/types';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 

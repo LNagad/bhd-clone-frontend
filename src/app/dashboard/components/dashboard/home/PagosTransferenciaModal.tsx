@@ -10,7 +10,6 @@ const PagosTransferenciaModal = () => {
   const modalRef = useRef<HTMLDivElement>(null);
   const { isPagosModalOpen, togglePagosModal } = useDashboardUIStore((state) => state);
 
-
   const handleMouseOut = (e : any) => {
     // Comprueba si el evento onMouseOut se origina en el div principal
     if (modalRef.current && !modalRef.current.contains(e.relatedTarget)) {
