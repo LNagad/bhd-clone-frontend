@@ -22,11 +22,11 @@ const ResumenProductos = () => {
                 isOpen 
                   ? <AiOutlineMinusCircle className='text-3xl text-green-600 rotate-90' /> 
                   : <AiOutlinePlusCircle className='text-3xl text-sky-600' />)}>
-              <div className='bg-white p-0'>
+              <div className='bg-white p-0 mt-2 px-3'>
                
-                <div className='text-gray-950 font-medium flex flex-col gap-y-2 text-sm'>
+                <div className='text-gray-950 font-medium flex flex-col gap-y-1 text-sm'>
                   <div className='flex w-full gap-y-2 justify-between items-center'>
-                    <p className='uppercase font-semibold text-[16.5px]'>cta.ahorros/nomina</p>
+                    <p className='uppercase font-semibold text-[14px]'>cta.ahorros/nomina</p>
                     <p>Ahorros</p>
                   </div>
                   <div className='flex w-full gap-y-2 justify-between items-center'>
