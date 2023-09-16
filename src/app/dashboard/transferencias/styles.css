@@ -1,0 +1,34 @@
+/* button[aria-label="select_transaction_type"]:active {
+    background-color: blue;
+    color: white;
+} */
+
+
+/* Aplica estilos cuando el elemento tiene aria-selected true y está en hover */
+li[aria-selected="false"]:hover {
+    /* Estilos que deseas aplicar cuando está en hover y aria-selected es true */
+    @apply bg-lime-200 text-gray-950
+}
+
+/* Estilos para cuando el elemento tiene aria-selected true sin hover */
+li[aria-selected="true"] p {
+    /* Otros estilos cuando aria-selected es true sin hover */
+    
+    @apply text-white
+    
+}
+li[aria-selected="true"] {
+    /* Otros estilos cuando aria-selected es true sin hover */
+    font-weight: bold !important;
+    font-size: 50px !important;
+    @apply bg-lime-500 text-gray-950
+}
+li[aria-selected="true"]:hover {
+    @apply bg-lime-500 text-gray-950
+}
+  
+  /* Estilos para cuando el elemento tiene aria-selected false */
+  li[aria-selected="false"] {
+    /* Otros estilos cuando aria-selected es false */
+    font-weight: normal;
+  }

@@ -2,6 +2,7 @@
 import { useDashboardUIStore } from '@/store';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 const PATH_NAMES = {
   dashboard: '/dashboard',
@@ -10,6 +11,7 @@ const PATH_NAMES = {
 
 const NavbarUl = () => {
   const { togglePagosModal, isPagosModalOpen } = useDashboardUIStore((state) => state);
+  const [isOtherLinkHovered, setIsOtherLinkHovered] = useState(false);
   const pathname  = usePathname();
   const router = useRouter();
 
