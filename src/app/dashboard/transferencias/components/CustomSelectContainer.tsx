@@ -7,18 +7,23 @@ interface Props {
     labelSelect: string;
     handleSelectToggle: () => void;
     handleOnSelect: (item: string) => void;
+    className?: string;
 }
 
-const CustomSelectContainer = ({selected, isOpen, handleOnSelect, handleSelectToggle, items, labelSelect} : Props) => {
+const CustomSelectContainer = ({
+  items, labelSelect, selected, isOpen, className, 
+  handleOnSelect, handleSelectToggle
+} : Props) => {
   return (
-    <div className='w-full flex flex-col gap-y-2'>
-      <label className='text-sm text-gray-950 font-medium'>{labelSelect}</label>
+    <div className={`w-full flex flex-col gap-y-2  ${className}`}>
+      <label className='text-sm text-gray-950 font-medium select-none'>{labelSelect}</label>
       <CustomSelect isOpen={ isOpen } selectedOption={ selected } handleSelectToggle={ handleSelectToggle } >
         {items.map((item) => {
           return (
             <div 
               key={item.value} 
-              className="option select-none px-1 py-2" 
+              className={`option select-none px-6 py-2 text-sm font-medium text-gray-500 
+               ${selected === item.label ? 'bg-primary text-white' : ' hover:bg-green-100'}`} 
               onClick={() => handleOnSelect(item.label)}>
               {item.label}
             </div>

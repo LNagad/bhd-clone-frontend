@@ -24,10 +24,10 @@
     cursor: pointer;
   }
   
-  .custom-select .options .option:hover {
+  /* .custom-select .options .option:hover {
     background-color: #e0e0e0;
   }
-  
+   */
   .custom-select.open .options {
     display: block;
   }

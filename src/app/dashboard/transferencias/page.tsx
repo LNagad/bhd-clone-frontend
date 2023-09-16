@@ -13,8 +13,15 @@ const handleSelectToggle = (set: SetStateFn<boolean>) => {
 };
 
 const TransferenciasPage = () => {
-  const [tipoTransferenciaSelected, setTipoTransferenciaSelected] = useState<string | null>(null);
   const [transferenciaIsOpen, setTransferenciaIsOpen] = useState(false);
+  const [productoOrigenIsOpen, setProductoOrigenIsOpen] = useState(false);
+
+  const [tipoTransferenciaSelected, setTipoTransferenciaSelected] = useState<string | null>(null);
+  const [productoOrigenSelected, setProductoOrigenSelected] = useState<string | null>(null);
+  
+  const handleOnProductoOrigenSelect = (item : string) => {
+    setProductoOrigenSelected(item);
+  };
 
   const handleOnTipoTransferenciaSelect = (item : string) => {
     setTipoTransferenciaSelected(item);
@@ -32,14 +39,23 @@ const TransferenciasPage = () => {
       <div className="flex flex-col py-4 px-5 w-[68%] gap-y-11 bg-white shadow-sm rounded-md">
         <h2 className="text-xl text-gray-400 font-medium">Pagos y Transferencias</h2>
 
-        <div className="w-[60%]">
+        <div className="w-[60%] flex flex-col gap-y-7">
           <CustomSelectContainer
+            className='bg-white z-20'
             labelSelect='Tipo de transacción'
             isOpen={transferenciaIsOpen}
             selected={tipoTransferenciaSelected}
             items={TRANSACTION_TYPES}
             handleSelectToggle={() => handleSelectToggle(setTransferenciaIsOpen)} 
             handleOnSelect={handleOnTipoTransferenciaSelect}  />
+
+          <CustomSelectContainer
+            labelSelect='Producto de Origen'
+            isOpen={productoOrigenIsOpen}
+            selected={productoOrigenSelected}
+            items={TRANSACTION_TYPES}
+            handleSelectToggle={() => handleSelectToggle(setProductoOrigenIsOpen)} 
+            handleOnSelect={handleOnProductoOrigenSelect}  />
         </div>
       </div>
       <div className="flex flex-col py-4 px-5 w-[32%] bg-white shadow-sm rounded-md">
