@@ -11,6 +11,11 @@ const TRANSACTION_TYPES = [
 ];
 
 const TransferenciasPage = () => {
+
+  const handleOnSelect = (item : any) => {
+    console.log(item.target.innerText);
+  };
+
   return (
     <section className="w-screen h-screen bg-gray-200 gap-x-4 py-8 px-28 flex justify-between">
       <div className="flex flex-col py-4 px-5 w-[68%] gap-y-11 bg-white shadow-sm rounded-md">
@@ -60,7 +65,7 @@ const TransferenciasPage = () => {
             
             >
               {(transaction) => (
-                <SelectItem onClick={(e) => console.log(e.target.innerText)} onSelect={() => alert('selected')}  key={transaction.value} textValue={transaction.label}>
+                <SelectItem onClick={handleOnSelect} key={transaction.value} textValue={transaction.label}>
                   <div className="flex gap-2 items-center0">
                     <p>{transaction.label}</p>
                   </div>
