@@ -12,6 +12,10 @@ const handleSelectToggle = (set: SetStateFn<boolean>) => {
   set((prevIsOpen) => !prevIsOpen);
 };
 
+const handleSetIsClose = (set: SetStateFn<boolean>) => {
+  set(false);
+};
+
 const TransferenciasPage = () => {
   const [transferenciaIsOpen, setTransferenciaIsOpen] = useState(false);
   const [productoOrigenIsOpen, setProductoOrigenIsOpen] = useState(false);
@@ -46,16 +50,18 @@ const TransferenciasPage = () => {
             isOpen={transferenciaIsOpen}
             selected={tipoTransferenciaSelected}
             items={TRANSACTION_TYPES}
+            handleOnSelect={handleOnTipoTransferenciaSelect}
             handleSelectToggle={() => handleSelectToggle(setTransferenciaIsOpen)} 
-            handleOnSelect={handleOnTipoTransferenciaSelect}  />
+            handleSetIsClose={() => handleSetIsClose(setTransferenciaIsOpen)}  />
 
           <CustomSelectContainer
             labelSelect='Producto de Origen'
             isOpen={productoOrigenIsOpen}
             selected={productoOrigenSelected}
             items={TRANSACTION_TYPES}
+            handleOnSelect={handleOnProductoOrigenSelect}
             handleSelectToggle={() => handleSelectToggle(setProductoOrigenIsOpen)} 
-            handleOnSelect={handleOnProductoOrigenSelect}  />
+            handleSetIsClose={() => handleSetIsClose(setProductoOrigenIsOpen)}  />
         </div>
       </div>
       <div className="flex flex-col py-4 px-5 w-[32%] bg-white shadow-sm rounded-md">
