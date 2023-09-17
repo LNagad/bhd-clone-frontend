@@ -38,14 +38,16 @@ const CustomSelectContainer = ({
   }, [handleSelectToggle]);
 
   return (
-    <div className={`w-full flex flex-col gap-y-2 ${className}`} ref={containerRef}>
-      <label className='text-sm text-gray-950 font-medium select-none'>{labelSelect}</label>
+    <div className={`w-full rounded-md  flex flex-col gap-y-2 ${className}`} ref={containerRef}>
+      <label className='text-[15px] text-gray-950 font-medium select-none'>
+        {labelSelect}
+      </label>
       <CustomSelect isOpen={isOpen} selectedOption={selected} handleSelectToggle={handleSelectToggle}>
         {items.map((item) => {
           return (
             <div
               key={item.value}
-              className={`option select-none px-6 py-2 text-sm font-medium text-gray-500 
+              className={`option select-none px-2 py-[10px] text-[16px] font-medium text-gray-500 
                ${selected === item.label ? 'bg-primary text-white' : ' hover:bg-green-100'}`}
               onClick={() => handleOnSelect(item.label)}
             >
