@@ -32,7 +32,7 @@
 }
 
 .accordion__cuentas > h2 >  button {
-    @apply bg-gray-100 hover:bg-gray-200 px-5 h-14 rounded-xl;
+    @apply bg-gray-100 hover:bg-gray-200 px-5 h-14 rounded-xl flex justify-between;
 }
 
 .acc__edit-account-alias-btn{

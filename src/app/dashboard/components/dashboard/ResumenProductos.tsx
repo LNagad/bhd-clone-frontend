@@ -20,7 +20,7 @@ const ResumenProductos = () => {
               className='accordion__cuentas font-medium  w-full text-gray-950 flex flex-col justify-center p-0'
               indicator={({ isOpen }) => (
                 isOpen 
-                  ? <AiOutlineMinusCircle className='text-3xl text-green-600 rotate-90' /> 
+                  ? <AiOutlineMinusCircle className='text-3xl text-green-600 ' /> 
                   : <AiOutlinePlusCircle className='text-3xl text-sky-600' />)}>
               <div className='bg-white p-0 mt-2 px-3'>
                
