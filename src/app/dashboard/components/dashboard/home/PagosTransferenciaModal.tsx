@@ -1,22 +1,27 @@
 'use client';
 
-import { useRef } from 'react';
-import Image from 'next/image';
+import { useRef, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { useDashboardUIStore } from '@/store';
+import Image from 'next/image';
 import AccesosRapidos from '../AccesosRapidos';
 import './styles.css';
 
 const PagosTransferenciaModal = () => {
+  const pathName = usePathname();
   const modalRef = useRef<HTMLDivElement>(null);
-  const { isPagosModalOpen, togglePagosModal } = useDashboardUIStore((state) => state);
+  const { isPagosModalOpen, closePagosModal } = useDashboardUIStore((state) => state);
 
   const handleMouseOut = (e : any) => {
     // Comprueba si el evento onMouseOut se origina en el div principal
     if (modalRef.current && !modalRef.current.contains(e.relatedTarget)) {
-      togglePagosModal();
+      closePagosModal();
     }
   };
 
+  useEffect(() => {
+    closePagosModal();
+  },[pathName])
 
   return (
     <div className={`pagos_transferencia-modal w-full absolute z-50 

@@ -17,7 +17,7 @@ const AccesosRapidos = ( { noShowTitle, bigTexts } : Props) => {
   //?info: will need to change the modal logic for that
   
   const { togglePagosModal, isPagosModalOpen } = useDashboardUIStore((state) => state);
-  console.log(isPagosModalOpen);
+  
   const togglePagosModalIfOpen = () => {
     if (isPagosModalOpen) {
       togglePagosModal();

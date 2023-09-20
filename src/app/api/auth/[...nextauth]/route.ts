@@ -34,7 +34,7 @@ const handler = NextAuth({
         });
           
         const data : ApiResponse = await resp.json();
-        console.log(data);
+        // console.log(data);
         if (!data.succeeded) {
           if (data.Message != null) throw new Error(data.Message);
           throw new Error(data.Errors[0]);
