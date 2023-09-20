@@ -3,6 +3,8 @@
   "rules": {
     "indent": ["error", 2],
     "semi": ["error", "always"],
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/exhaustive-deps": "off"
   }
 }

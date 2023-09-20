@@ -21,7 +21,7 @@ const PagosTransferenciaModal = () => {
 
   useEffect(() => {
     closePagosModal();
-  },[pathName])
+  },[pathName]);
 
   return (
     <div className={`pagos_transferencia-modal w-full absolute z-50 
